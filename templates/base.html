@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en-us">
+
+<head>
+   <meta charset="utf-8">
+   <title>{% block title %}Wood Biz{% endblock title %}</title>
+
+   <!-- mobile responsive meta -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+   <meta name="description" content="Melamine-faced panels [MF-PB or MF-MDF] are created by high pressure heat bonding impregnated paper to particleboard or MDF to provide a highly wear and water resistant product surface finish. The product is used for a wide range of applications, including kitchen, bathroom, bedroom and office furniture, in a variety of fashionable designs and textures. Matching laminates and edge bands are offered to customers to complement the range and enhance the finished product.">
+   <meta name="author" content="Stylish Wood">
+ 
+   <!-- theme meta -->
+   <meta name="theme-name" content="#CE8460" />
+   <meta name=
+  "apple-mobile-web-app-status-bar"
+        content="#CE8460">
+ <!-- Manifest File link -->
+ <link rel="manifest"
+ href="{% static 'manifest.json' %}">
+   <!-- plugins -->
+   <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFWJ0bbck.woff2" style="font-display: optional;">
+   <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600%7cOpen&#43;Sans&amp;display=swap" media="screen">
+
+   <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+   <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+
+   <!-- Main Stylesheet -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+   <!--Favicon-->
+   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="{% static 'images/logo/favicon_io/favicon.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+<!-- navigation -->
+<header class="sticky-top bg-white border-bottom border-default">
+   <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-white">
+         <a class="navbar-brand" href="/">
+            <img class="img-fluid" width="150px" src="{% static 'images/logo.png' %}" alt="LogBook">
+         </a>
+         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+            <i class="ti-menu"></i>
+         </button>
+
+         <div class="collapse navbar-collapse text-center" id="navigation">
+            
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+               <a class="nav-link" href="/">Home</a>
+            </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                     aria-expanded="false">
+                     Categories<i class="ti-angle-down ml-1"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                     {% for category in categories %}
+                     <a class="dropdown-item" href="/?category={{category.name}}">{{category.name|title}}</a>
+                     {% endfor %}
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/about">About</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact</a>
+               </li>
+               
+            </ul>
+            
+          
+            <!-- search -->
+            <div class="search px-4">
+               <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+               <div class="search-wrapper">
+                  <form action="." class="h-100">
+                     <input class="search-box pl-4" id="search-query" name="s" type="search" placeholder="Type &amp; Hit Enter...">
+                  </form>
+                  <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+               </div>
+            </div>
+
+         </div>
+      </nav>
+   </div>
+</header>
+<!-- /navigation -->
+<div class="container">
+{% block body %}
+
+
+ 
+{% endblock body %}
+
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style mt-5" style="bottom:0px; center:0px; background-color:transparent;">
+   <a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_email"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_telegram"></a>
+<a class="a2a_button_google_gmail"></a>
+<a class="a2a_button_facebook_messenger"></a>
+<a class="a2a_button_copy_link"></a>
+</div>
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+</div>
+
+
+   <footer class="section-sm pb-0 border-top border-default">
+      <div class="container">
+         <div class="row justify-content-between">
+            <div class="col-md-3 mb-4">
+               <a class="mb-4 d-block" href="/">
+                  <img class="img-fluid" width="150px" src="{% static 'images/logo.png' %}" alt="LogBook">
+               </a>
+               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+               <h6 class="mb-4">Quick Links</h6>
+               <ul class="list-unstyled footer-list">
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="terms-conditions.html">Terms Conditions</a></li>
+               </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-3 col-6 mb-4">
+               <h6 class="mb-4">Social Links</h6>
+               <ul class="list-unstyled footer-list">
+                  <li><a href="#">facebook</a></li>
+                  <li><a href="#">twitter</a></li>
+                  <li><a href="#">linkedin</a></li>
+                  <li><a href="#">github</a></li>
+               </ul>
+            </div>
+
+            <div class="col-md-3 mb-4">
+               <h6 class="mb-4">Subscribe Newsletter</h6>
+               <form class="subscription" action="." method="post">
+                  {% csrf_token %}
+                  <div class="position-relative">
+                     <i class="ti-email email-icon"></i>
+                     <input type="email" name="email" for="email" class="form-control" placeholder="Your Email Address">
+                  </div>
+                  <button class="btn btn-primary btn-block rounded" type="submit">Subscribe now</button>
+               </form>
+            </div>
+         </div>
+         <div class="scroll-top">
+            <a href="javascript:void(0);" id="scrollTop"><i class="ti-angle-up"></i></a>
+         </div>
+         <div class="text-center">
+            <p class="content">&copy; 2020 - Design &amp; Develop By <a href="https://github.com/numaan7" target="_blank">Numaan7</a></p>
+         </div>
+      </div>
+   </footer>
+
+
+   <!-- JS Plugins -->
+   
+   <script src="{% static 'plugins/jQuery/jquery.min.js'%}"></script>
+   <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}" async></script>
+   <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+   <!-- Main Script -->
+   <script src="{% static 'js/script.js' %}"></script>
+   <script src="{% static 'js/serviceworker.js' %}"></script>
+
+
+   <script>
+      window.addEventListener('load', () => {
+        registerSW();
+      });
+    
+      // Register the Service Worker
+      async function registerSW() {
+        if ('serviceWorker' in navigator) {
+          try {
+            await navigator
+                  .serviceWorker
+                  .register("{% static 'js/serviceworker.js' %}");
+                  console.log('SW registration failed');
+          }
+          catch (e) {
+            console.log('SW registration failed');
+          }
+        }
+      }
+    </script>
+</body>
+</html>

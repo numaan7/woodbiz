@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Stylish Wood Designs - All design and veriaties of woods are avaliable here.{% endblock title %}
+{% block body %}
+ <div class="text-center my-3">
+    <h2>Stylish Wood Designs</h2>
+    <p>Melamine-faced panels [MF-PB or MF-MDF] are created by high pressure heat bonding impregnated paper to particleboard or MDF to provide a highly wear and water resistant product surface finish.
+
+        The product is used for a wide range of applications, including kitchen, bathroom, bedroom and office furniture, in a variety of fashionable designs and textures.
+        
+        Matching laminates and edge bands are offered to customers to complement the range and enhance the finished product.</p>
+ </div>
+<div class="d-flex justify-content-center">
+ <div class="dropdown my-3 mx-3">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      All Categories
+    </button>
+    <ul class="dropdown-menu">
+        {% for category in categories %}
+      <li><a class="dropdown-item" href="/?category={{category.name }}">{{category.name}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="dropdown my-3">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort
+    </button>
+    <ul class="dropdown-menu">
+        
+      <li><a class="dropdown-item" href="/?sort=newest">Newest</a></li>
+      <li><a class="dropdown-item" href="/?sort=oldest">Oldest</a></li>
+      <li><a class="dropdown-item" href="/?sort=atoz">A-TO-Z</a></li>
+      <li><a class="dropdown-item" href="/?sort=ztoa">Z-TO-A</a></li>
+    
+    </ul>
+  </div>
+
+</div>
+
+<div class="infinite-container">
+{% for wood in woods %}
+
+<div class="my-5 text-center infinite-item ">
+
+   
+   
+<img src="{{wood.image.url}}" data-bs-toggle="modal" data-bs-target="#exampleModal{{wood.id}}" class="rounded mx-auto d-block shadow-sm  bg-body-tertiary" title="image of {{wood.title}}" alt="image of {{wood.title}}">
+
+<p class="my-2" style="font-weight:bolder;">{{wood.title|title}}</p>
+</div>
+
+<div class="modal fade " id="exampleModal{{wood.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   
+   <div class="modal-dialog  modal-dialog-centered">
+      <button type="button" style="position: absolute;
+      top: 0;
+      background-color: transparent;
+      right: 0;
+      color: white;
+      border: 1px solid white;" class="rounded-circle m-3" data-bs-dismiss="modal" aria-label="Close"> <span class="badge text-bg-secondary">x</span> </button>
+     
+         <img src="{{wood.image.url}}" width="300px" height="300px" title="image of {{wood.title}}" class="mx-auto d-block" alt="image of {{wood.title}}">
+        
+   </div>
+
+</div>
+
+{% endfor %}
+<div class="d-flex justify-content-center my-3 ">
+{% include "pagination.html" with page=woods %}
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    registerSW();
+  });
+
+  // Register the Service Worker
+  async function registerSW() {
+    if ('serviceWorker' in navigator) {
+      try {
+        await navigator
+              .serviceWorker
+              .register('serviceworker.js');
+      }
+      catch (e) {
+        console.log('SW registration failed');
+      }
+    }
+  }
+</script>
+</div>
+
+
+{% endblock body %}

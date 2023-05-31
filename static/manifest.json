@@ -1,0 +1,32 @@
+{
+	"name":"Stylish Wood",
+	"short_name":"SW",
+	"start_url":"/",
+	"display":"standalone",
+    "orientation": "natural",
+	"background_color":"white",
+	"theme_color":"#CE8460",
+    "dir": "auto",
+    "lang": "en-US",
+    "prefer_related_applications": false,
+    "related_applications": [],
+	"scope": "/",
+	"description":"Melamine-faced panels [MF-PB or MF-MDF] are created by high pressure heat bonding impregnated paper to particleboard or MDF to provide a highly wear and water resistant product surface finish. The product is used for a wide range of applications, including kitchen, bathroom, bedroom and office furniture, in a variety of fashionable designs and textures. Matching laminates and edge bands are offered to customers to complement the range and enhance the finished product.",
+	"icons":[
+	{
+	"src":"images/logo/favicon_io/android-chrome-192x192.png",					
+	"sizes":"192x192",
+	"type":"image/png"
+	},
+	{
+	"src":"images/logo/favicon_io/android-chrome-512x512.png",
+	"sizes":"512x512",
+	"type":"image/png"
+	},
+    {      
+    "src": "images/logo/favicon_io/apple-touch-icon.png",
+        "type": "image/png",      
+        "sizes": "180x180"    
+    }  
+]
+}
